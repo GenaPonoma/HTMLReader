@@ -6,18 +6,17 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
 
-public class HelloApplication extends Application {
+public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(HelloApplication.class.getResource("editor.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/org/example/css/fxml/editor.fxml"));
         Scene scene = new Scene(root);
 
         // Устанавливаем стили
-        URL urlStylesheet = getClass().getResource("/css/styles.css");
+        URL urlStylesheet = getClass().getResource("/org/example/css/styles.css");
         scene.getStylesheets().add(urlStylesheet.toExternalForm());
 
         primaryStage.setTitle("HTML Editor");
